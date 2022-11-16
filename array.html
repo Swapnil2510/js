@@ -1,0 +1,107 @@
+<html>
+<head>
+<title>Displaying various methods of arrays</title>
+</head>
+<body>
+
+<h1>Array Operations</h1> 
+
+Enter an Element to create array :
+<input id="Elements" type="text">
+<input type="button" value="Add Element" onclick="addElements()">
+<br><br>
+
+Result Array- 
+<input type="button" value="Display Array" onclick="displayValues()">
+
+<br><br>
+Choose an operation to be performed :
+<input type="button" value="Pop Element" onclick="removeElementAtEnd()">
+<input type="button" value="Shift Element" onclick="removeElementAtFirst()">
+
+<br><br>
+Enter the index number to delete a particular element : <input type = "text" id = "num1">
+ 
+<input type="button" value="Delete Element" onclick="deleteElement()">
+
+<br><br>
+
+
+
+<br><br>
+Enter any element to check whether the element is present in the array or not : <input type = "text" id = "num3">
+<input type = "button" value = "Check" onclick = "includeElement()">
+
+<br><br>
+Enter any element to add using Push method : <input type = "text" id = "num4">
+<input type="button" value="Push Element" onclick="pushElement()">
+
+<br><br>
+<input type="button" value="Click here to clear the array" onclick="clear1()">
+
+<br><br>
+<div id="result"></div>
+
+<script> var i=0;
+var arrElements = new Array(); function addElements()
+{
+arrElements[i] = document.getElementById("Elements").value; alert(arrElements[i] + " is added to the Array");
+i++;
+document.getElementById("Elements").value = "";
+}
+
+function displayValues()
+{
+var content="The Array is : <br>"; content+= [arrElements]+"</br>";
+document.getElementById('result').innerHTML = content;
+}
+ 
+function removeElementAtEnd()
+{
+var a = arrElements.pop(); alert("Removed last element");
+}
+
+function removeElementAtFirst()
+{
+var b = arrElements.shift(2); alert("Removed first element");
+}
+
+function deleteElement()
+{
+//	var c = delete arrElements[2];
+var c = document.getElementById("num1").value; var d = delete arrElements[c];
+alert("Deleted particular element");
+}
+
+
+function includeElement()
+{
+var h = document.getElementById("num3").value; var k = arrElements.includes(h);
+{
+if(k)
+{
+
+alert("The entered element is Present in the array.");
+}
+ 
+else
+{
+alert("The entered element is not Present in the array.");
+}
+}
+}
+
+function pushElement()
+{
+var m = document.getElementById("num4").value; var n = arrElements.push(m);
+alert("Push operation done successfully!");
+
+}
+
+function clear1()
+{
+arrElements.length = 0;
+}
+</script>
+</body>
+</html>

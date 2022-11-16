@@ -1,0 +1,46 @@
+<html>
+    <head>
+        <title>Append in Array</title>
+    </head>
+    <body>
+        <h1>Append Operation on Array </h1>
+        <h3>Array :1 2 3 4 5 6</h3>
+        <br>
+        Enter a value to be added in Array:<br>
+
+        <input type="text"id="add">
+ 		 <input type="button"value="Push element"onclick="pushArr()">
+        <br><br>
+
+
+        <input type="button" value="Check it is Array"onclick="ckeckArr()">
+        <br><br>
+
+        Enter index to slice:<br>
+        <input type="text" id="value">
+        <input type="button"value="slice"onclick="sliceArr()">
+
+        <br><br>
+
+        <script>
+            const arr=["1","2","3","4","5","6"];
+            function ckeckArr(){
+                let res=Array.isArray(arr);
+                document.write(res);
+                
+            }
+            function pushArr(){
+                var add=document.getElementById("add").value;
+                arr.push(add);
+                document.write("new element is"+arr);
+
+            }
+            function sliceArr(){
+                var add=document.getElementById("add").value;
+                var index=document.getElementById("value").value;
+                arr.splice(index,0,add);
+                document.write("the slice array is "+arr);
+            }
+        </script>
+    </body>
+</html>

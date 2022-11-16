@@ -1,0 +1,60 @@
+<html>
+<body>
+<h1>Comparison of Strings</h1>
+
+Enter the First String :
+	<input type="text" Id="S1"> <br> <br>
+
+Enter the Second String :
+	<input type='text' Id='S2'> <br> <br>
+
+	<input type='button' value="Compare using the localeCompare() method" onclick="comp()"> <br><br>
+
+	<input type='button' value='Compare using the Strict Equality Operator' onclick="equality()">
+
+<script>
+
+	function comp()
+	{
+		var str1=document.getElementById("S1").value; 
+		var str2=document.getElementById("S2").value; 
+		let result=str1.localeCompare(str2); 
+
+			if(result==0)
+ 
+			{
+				alert("Strings are equal");
+			}
+			else
+			{
+				alert("Strings are not equal");
+			}
+		}
+
+			
+	function equality()
+	{
+		var str1=document.getElementById("S1").value; 
+		var str2=document.getElementById("S2").value; 
+
+		if(str1===str2)
+		{
+			alert("Strings are equal");
+		}
+		else
+		{
+			alert("Strings are not equal");
+		}
+	}
+
+
+	function regex()
+	{
+		var str1=document.getElementById("S1").value; 
+		var str2=document.getElementById("S2").value; 
+		var s3= new RegExp
+	}
+
+</script>
+</body>
+</html>

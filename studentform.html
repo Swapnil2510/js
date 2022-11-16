@@ -1,0 +1,62 @@
+<html>
+<head>
+<title> Student Information Form </title>
+
+<script type="text/javascript"> 
+
+		function valid()
+		{
+		var na = document.getElementById("nm").value; 
+		var ag = document.getElementById("age").value;
+		var em = document.getElementById("eid").value; 
+		var mno = document.getElementById("pno").value; 
+
+if(na==""||na==null)
+ 
+{
+	alert("Enter The Name"); 
+	return false;
+}
+else if(isNaN(ag)||ag<1||ag>100)
+{
+	alert("The age must be a number between 1 and 100"); return false;
+}
+else if(em==-1)
+{
+	alert("E-mail ID is not valid"); return false;
+}
+else if(mno==""||mno==null)
+{
+	alert("Enter The Phone No"); return false;
+}
+else if(isNaN(mno)||mno.length>10||mno.length<10)
+{
+	alert("The mobile no. always has 10 digit numerical value"); return false;
+}
+else
+	alert("The Student Information Submitted Successfully");
+	document.write("<b>"+ "Welcome " + "</b>" + na + "</br>" + "Please Check your information !!"
+	+"<br><br>" + "Name: " + na + "</br>" + "Age: " + ag + "</br>" + "Email id: " + em + "</br>" + "Phone Number: " + mno + "</br>" );
+}
+
+</script>
+</head>
+
+<body>
+<div id="container">
+<center><b>
+<h2><b>Student Information Form</b></h2>
+
+<form action="" onsubmit="return valid()" method="post">
+
+	Name: <input type="text" id="nm" placeholder="Enter Your Name here"><br><br> 
+	Age: <input type="text" id="age" placeholder="Enter Your Age here"><br><br> 
+	Email id: <input type="text" id="eid" placeholder="Enter Your Email here"><br><br> 
+	Phone Number: <input type="text" id="pno" placeholder="Enter Your PhoneNumber here"><br><br><br>
+
+<input type="submit" class = "sub" value="Submit">
+</form>
+ 
+</b></center></div>
+</body>
+</html>

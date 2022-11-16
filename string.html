@@ -1,0 +1,53 @@
+<html>
+<body>
+<hl> <b> String Operations <br><br></b> 
+
+</hl> Enter a string :
+	<input type ="text" id="s1"/>
+	<br><br><input type ="button" value= "Reverse the string" onclick= "reverse1()" />
+	<br><br>
+
+Enter character to be replaced :
+	<input type ="text" id="s2"/>
+	<br><br>
+
+Enter new character :
+	<input type ="text" id="s3"/>
+	<br><br><input type ="button" value= "Replace characters of the string" onclick= "replace1()" />
+	<br><br><input type ="button" value= "Check if the string is Pallindrome" onclick= "pallindrome1()" />
+ 
+<script>
+
+	function reverse1()
+	{
+		var r1 = (document.getElementById('s1').value); 
+		var r2 = r1.split("");
+		var r3 = r2.reverse(); 
+		var r4 = r3.join("");
+		document.write("The reversed string is : "+r4);
+	}
+
+	function replace1()
+	{
+		var r1 = (document.getElementById('s1').value); 
+		var r5 = (document.getElementById('s2').value); 
+		var r6 = (document.getElementById('s3').value); 
+		var r7 = r1.replace(r5,r6);
+		document.write("The new string is : "+r7);
+	}
+
+	function pallindrome1()
+	{
+		var r1 = (document.getElementById('s1').value); 
+		var r2 = r1.split("");
+		var r3 = r2.reverse(); var r4 = r3.join(""); 
+			
+			if(r4==r1)
+				document.write("The given string is Pallindrome."); 
+			else
+				document.write("The given string is not Pallindrome.");
+	}
+
+</script>
+</body>
+</html>

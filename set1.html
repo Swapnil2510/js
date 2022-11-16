@@ -1,0 +1,79 @@
+
+<html>
+  <head>
+    
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Set Operations</h1>
+    <h3>Set A : 1 2 3 4 5 6 7 8</h3>
+    <h3>Set B : 2 4 6 8</h3>
+    <br />
+    <hr />
+    <!-- <p class="output">Answer</p> -->
+
+    1)
+    <input type="button" value="Union " onclick="setUnionOp()" /><br /><br />
+
+    2)
+    <input
+      type="button"
+      value="Intersection"
+      onclick="setIntersectionOp()"
+    /><br /><br />
+
+    3)
+    <input
+      type="button"
+      value="Difference"
+      onclick="setDifferenceOp()"
+    /><br /><br />
+
+    4)
+    <input type="button" value="Is B a Subset of A" onclick="setSubsetChk()" />
+
+    <script>
+      var setA = new Set([1, 2, 3, 4, 5, 6, 7, 8]);
+      var setB = new Set([2, 4, 6, 8]);
+      //   let output = document.querySelector(".output");
+
+      function setUnionOp() {
+        var unionSet = new Set(setA);
+        for (var i of setB) {
+          unionSet.add(i);
+        }
+        console.log(unionSet);
+      }
+
+      function setIntersectionOp() {
+        let intersectionSet = new Set();
+        for (let i of setB) {
+          if (setA.has(i)) {
+            intersectionSet.add(i);
+          }
+        }
+        console.log(intersectionSet);
+      }
+
+      function setDifferenceOp() {
+        let differenceSet = new Set(setA);
+        for (let i of setB) {
+          differenceSet.delete(i);
+        }
+        console.log(differenceSet);
+      }
+
+      function setSubsetChk() {
+        for (let i of setB) {
+          if (!setA.has(i)) {
+            console.log("False");
+            break;
+          } else {
+            console.log("True");
+            break;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

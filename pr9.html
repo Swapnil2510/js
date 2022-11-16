@@ -1,0 +1,59 @@
+<html>
+<head>
+</head>
+<body>
+
+  <form id="fm">
+    <h2> Focus Event </h2>
+    Enter Text 
+    <input type="text" id="myInput">
+  </form>
+  
+
+<h2>Change background color</h2>
+<p>Mouse over the squares!</p>
+
+<table style="width:400px;height:200px">
+  <tr>
+    <td onmouseover="bgChange(this.style.backgroundColor)" 
+    onmouseout="bgChange('transparent')"
+    style="background-color:pink">
+    </td>
+    <td onmouseover="bgChange(this.style.backgroundColor)" 
+    onmouseout="bgChange('transparent')"
+    style="background-color:rgb(164, 215, 224)">
+    </td>
+    <td onmouseover="bgChange(this.style.backgroundColor)" 
+    onmouseout="bgChange('transparent')"
+    style="background-color:rgb(156, 218, 180)">
+    <td onmouseover="bgChange(this.style.backgroundColor)" 
+    onmouseout="bgChange('transparent')"
+    style="background-color:rgb(188, 190, 54)">
+    </td>
+  </tr>
+</table>
+
+<script>
+  var x = document.getElementById("fm");
+  x.addEventListener("focus", myFocusFunction, true);
+  x.addEventListener("blur", myBlurFunction, true);
+
+  //on Focus event
+  function myFocusFunction() {
+    document.getElementById("myInput").style.backgroundColor = "red";
+  }
+  
+  function myBlurFunction() {
+    document.getElementById("myInput").style.backgroundColor = "";
+  }
+
+  //mouse over
+  function bgChange(bg) {
+  document.body.style.background = bg;
+}
+
+
+  </script>
+
+</body>
+</html>
